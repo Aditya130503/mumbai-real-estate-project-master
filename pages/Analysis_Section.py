@@ -14,7 +14,11 @@ fig = px.scatter_mapbox(data,lat='latitude',lon='longitude',size='flat_price',
                          color='flat_price', hover_name='location',zoom=8.5,
                          mapbox_style="open-street-map",color_continuous_scale='plotly3')
 st.plotly_chart(fig,use_container_width=True)
-st.caption("This map shows the geographic distribution of average flat prices across different areas of Mumbai.")
+st.markdown(
+  "<div style='text-align: center; font-size: 16px; margin-top: 10px;'>"
+  "This map shows the geographic distribution of average flat prices across different areas of Mumbai."
+"</div>",
+    unsafe_allow_html=True)
 df = pd.read_csv('data//data_for_model.csv')[['flat_type','flat_price','location1',
                                                  'buildupArea_sqft','bedrooms','bathrooms']]
 st.divider()
@@ -69,7 +73,7 @@ plt.xticks(rotation=45, ha='right')
 
 # Display the plot in Streamlit
 st.pyplot(fig)
-st.caption("Bar graph displaying locations with the highest average flat price per square foot.")
+st.markdown("Bar graph displaying locations with the highest average flat price per square foot.")
 
 
 st.divider()
@@ -87,7 +91,7 @@ plt.xticks(rotation=45, ha='right')
 
 # Display the plot in Streamlit
 st.pyplot(fig)
-st.caption("Shows the top 10 locations in Mumbai with the highest number of available flats.")
+st.markdown("Shows the top 10 locations in Mumbai with the highest number of available flats.")
 
 
 st.divider()
@@ -95,7 +99,7 @@ st.subheader(":green[Relation Between Builup Area and Price]")
 fig3 = px.scatter(data_frame=df,x='buildupArea_sqft',y='flat_price',color='bedrooms',
                   color_continuous_scale='plotly3')
 st.plotly_chart(fig3,use_container_width=True)
-st.caption("Scatter plot illustrating how flat price correlates with the buildup area, segmented by number of bedrooms.")
+st.markdown("Scatter plot illustrating how flat price correlates with the buildup area, segmented by number of bedrooms.")
 st.divider()
 
 
@@ -110,7 +114,7 @@ else:
     d1 = df[df['location1'] == selected_location1]   
     fig4 = px.pie(data_frame=d1,names='bedrooms') 
     st.plotly_chart(fig4,use_container_width=True)
-st.caption("Pie chart showing the proportion of different BHK configurations either overall or within the selected location.")  
+st.markdown("Pie chart showing the proportion of different BHK configurations either overall or within the selected location.")  
 st.divider()
 
 
@@ -118,7 +122,7 @@ st.subheader(":green[Histplot of price]")
 fig5 = plt.figure(figsize=(10, 6))
 sns.histplot(df['flat_price'],kde=True)
 st.pyplot(fig5,use_container_width=True)
-st.caption("Histogram showing the distribution of flat prices with a kernel density estimate.")
+st.markdown("Histogram showing the distribution of flat prices with a kernel density estimate.")
 
 # Pie chart for top locations share
 st.write("### Top Locations Share")
@@ -129,4 +133,4 @@ ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular.
 ax.set_title('Top 10 Locations Share')
 st.pyplot(fig)
 
-st.caption("Pie chart representing the share of total flats held by the top 10 locations in Mumbai.")
+st.markdown("Pie chart representing the share of total flats held by the top 10 locations in Mumbai.")
