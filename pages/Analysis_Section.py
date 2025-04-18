@@ -92,29 +92,6 @@ plt.xticks(rotation=45, ha='right')
 st.pyplot(fig)
 
 st.divider()
-
-
-
-
-
-
-
-
-st.divider()
-st.subheader(":green[Distribution of Price According to Flat Type]")
-locations = df['location1'].unique().tolist()
-locations.insert(0,'Overall')
-selected_location = st.selectbox("Select Location",locations)
-if selected_location == 'Overall':
-    fig1 = px.box(df,x='flat_type',y='flat_price')
-    st.plotly_chart(fig1,use_container_width=True)
-else:    
-    d = df[df['location1'] == selected_location]
-    fig2 = px.box(d,x='flat_type',y='flat_price')
-    st.plotly_chart(fig2,use_container_width=True)
-st.divider()
-
-
 st.subheader(":green[Relation Between Builup Area and Price]")
 fig3 = px.scatter(data_frame=df,x='buildupArea_sqft',y='flat_price',color='bedrooms',
                   color_continuous_scale='plotly3')
