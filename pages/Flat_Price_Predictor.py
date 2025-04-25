@@ -37,5 +37,5 @@ if btn:
     new_df = pd.DataFrame([input],columns=df.columns)
     lower = round(np.expm1(pipe.predict(new_df)[0]) - np.expm1(pipe.predict(new_df)[0])*0.05,2)
     upper = round(np.expm1(pipe.predict(new_df)[0]) + np.expm1(pipe.predict(new_df)[0])*0.05,2)
-    st.header(f"Your Dream Costs {lower} Cr. to {upper} Cr")
+    st.header(f"Your Dream Home Costs {lower} Cr. to {upper} Cr")
     
