@@ -5,8 +5,9 @@ from PIL import Image
 st.set_page_config(page_title="Project Overview", layout="centered")
 
 # Title and Banner Image
-st.subheader(" Fr. Conceicao Rodrigues College of Engineering")
 st.title("Mumbai Flat Price Prediction and Recommendation")
+st.subheader(" Fr. Conceicao Rodrigues College of Engineering")
+
 
 # Load and Display Image
 image = Image.open("img.png")
