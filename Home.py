@@ -8,11 +8,6 @@ st.set_page_config(page_title="Project Overview", layout="centered")
 st.title("Mumbai Flat Price Prediction and Recommendation")
 st.subheader(" Fr. Conceicao Rodrigues College of Engineering")
 
-
-# Load and Display Image
-image = Image.open("img.png")
-st.image(image, width=350, caption="Project Overview")
-
 # Project Guide Section
 st.markdown("## Project Guide")
 st.info("Prof. Jayen Modi ")
