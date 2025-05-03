@@ -11,7 +11,7 @@ st.subheader(" Fr. Conceicao Rodrigues College of Engineering")
 
 # Load and Display Image
 image = Image.open("img.png")
-st.image(image, width=250, caption="Project Overview")
+st.image(image, width=350, caption="Project Overview")
 
 # Project Guide Section
 st.markdown("## Project Guide")
