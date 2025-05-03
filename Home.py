@@ -9,7 +9,7 @@ st.title("Mumbai Flat Price Prediction and Recommendation")
 st.subheader(" Fr. Conceicao Rodrigues College of Engineering")
 
 # Project Guide Section
-st.markdown("## Project Guide")
+st.subheader("Project Guide")
 st.info("Prof. Jayen Modi ")
 
 # Team Members Section
