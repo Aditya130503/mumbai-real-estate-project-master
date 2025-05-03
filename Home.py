@@ -5,12 +5,12 @@ from PIL import Image
 st.set_page_config(page_title="Project Overview", layout="centered")
 
 # Title and Banner Image
-st.title("🏫 Fr. Conceicao Rodrigues College of Engineering")
+st.title(" Fr. Conceicao Rodrigues College of Engineering")
 st.subheader("Mumbai Flat Price Prediction and Recommendation")
 
 # Load and Display Image
 image = Image.open("img.png")
-st.image(image, width=600, caption="Project Overview")
+st.image(image, width=150, caption="Project Overview")
 
 # Project Guide Section
 st.markdown("## Project Guide")
